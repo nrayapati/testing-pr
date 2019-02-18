@@ -39,5 +39,5 @@ def setPRCommitStatus(context, status) {
     }else if(status.equalsIgnoreCase("failure")){
         prDescription = "Build failed! Click Details button to see more details"
     }
-    pullRequest.createStatus(status: status, context: context, description: prDescription, targetUrl: "${RUN_DISPLAY_URL}".toString())
+    pullRequest.createStatus(status: status, context: context, description: prDescription, targetUrl: "http://localhost:8080".toString())
 }

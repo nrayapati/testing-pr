@@ -33,6 +33,7 @@ node {
         // }
         // parallel stepsForParallel
     }   
+    }
 }
 
 def setPRCommitStatus(context, status) {

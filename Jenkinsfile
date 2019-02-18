@@ -8,6 +8,7 @@ properties([
 
 node {
     checkout scm
+    1.upto(10) {
     if(env.CHANGE_ID ) {
         setPRCommitStatus("assembly", "success")
 

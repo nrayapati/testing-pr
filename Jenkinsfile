@@ -9,26 +9,28 @@ properties([
 node {
     checkout scm
     if(env.CHANGE_ID ) {
-        def stepsForParallel = [:]
-        stepsForParallel["Ruby Scripts Validation"] = {
-            setPRCommitStatus("ruby", "success")
-        }
-        stepsForParallel["Shell Scripts Validation"] = {
-            setPRCommitStatus("shell", "success")
-        }
-        stepsForParallel["Profile Validation"] = {
-            setPRCommitStatus("profile", "success")
-        }
-        stepsForParallel["Domain Config Validation"] = {
-            setPRCommitStatus("domain_config", "success")
-        }
-        stepsForParallel["Content Generation Validation"] = {
-            setPRCommitStatus("generation", "success")
-        }
-        stepsForParallel["Assembly Validation"] = {
-            setPRCommitStatus("assembly", "success")
-        }
-        parallel stepsForParallel
+        setPRCommitStatus("assembly", "success")
+
+        // def stepsForParallel = [:]
+        // stepsForParallel["Ruby Scripts Validation"] = {
+        //     setPRCommitStatus("ruby", "success")
+        // }
+        // stepsForParallel["Shell Scripts Validation"] = {
+        //     setPRCommitStatus("shell", "success")
+        // }
+        // stepsForParallel["Profile Validation"] = {
+        //     setPRCommitStatus("profile", "success")
+        // }
+        // stepsForParallel["Domain Config Validation"] = {
+        //     setPRCommitStatus("domain_config", "success")
+        // }
+        // stepsForParallel["Content Generation Validation"] = {
+        //     setPRCommitStatus("generation", "success")
+        // }
+        // stepsForParallel["Assembly Validation"] = {
+        //     setPRCommitStatus("assembly", "success")
+        // }
+        // parallel stepsForParallel
     }   
 }
 
